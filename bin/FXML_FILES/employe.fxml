@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="564.0" maxWidth="953.0" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #0a285c;" styleClass="root" stylesheets="@../CSS/employe.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="564.0" prefWidth="887.0" style="-fx-background-color: #0a285c;">
+         <children>
+            <TabPane prefHeight="564.0" prefWidth="887.0" styleClass="tab" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="ENREGISTRER LA RESERVATION">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="525.0" prefWidth="887.0" style="-fx-background-color: #eeeeee;">
+                           <children>
+                              <TextField layoutX="60.0" layoutY="334.0" prefHeight="33.0" prefWidth="346.0" promptText="Id de transaction">
+                                 <font>
+                                    <Font name="Berlin Sans FB Bold" size="15.0" />
+                                 </font>
+                              </TextField>
+                              <TextField layoutX="535.0" layoutY="52.0" prefHeight="33.0" prefWidth="246.0" promptText="Prenoms client">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="15.0" />
+                                 </font>
+                              </TextField>
+                              <TextField layoutX="57.0" layoutY="121.0" prefHeight="33.0" prefWidth="347.0" promptText="Numero de telephone">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="15.0" />
+                                 </font>
+                              </TextField>
+                              <ComboBox layoutX="60.0" layoutY="190.0" prefHeight="31.0" prefWidth="211.0" promptText="Ville de depart" />
+                              <ComboBox layoutX="535.0" layoutY="189.0" prefHeight="34.0" prefWidth="255.0" promptText="Villle d'arrivee" />
+                              <DatePicker layoutX="62.0" layoutY="262.0" promptText="Date de depart" />
+                              <ComboBox layoutX="535.0" layoutY="263.0" prefHeight="31.0" prefWidth="259.0" promptText="Numero de depart" />
+                              <Button layoutX="106.0" layoutY="445.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="694.0" styleClass="buttVali" text="Valider reservation" />
+                              <Button layoutX="535.0" layoutY="330.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="201.0" style="-fx-background-radius: 50px;" text="Valider reservation" />
+                              <TextField layoutX="57.0" layoutY="52.0" prefHeight="33.0" prefWidth="210.0" promptText="Nom client">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="15.0" />
+                                 </font>
+                              </TextField>
+                              <Label layoutX="752.0" layoutY="340.0" prefHeight="21.0" prefWidth="58.0" text="Label:" />
+                              <Label layoutX="822.0" layoutY="340.0" text="Label" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="VERIFIER LA RESERVATION">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </Tab>
+                  <Tab text="MODIFIER RESERVATION">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                  </Tab>
+                  <Tab text="ANNULER RESERVATION">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
