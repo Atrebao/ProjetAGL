@@ -4,30 +4,34 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import javax.swing.JOptionPane;
-
 public class DBConnection {
-    Connection connection;
-    String databaseName= "bd_projet_agl";
-    private String url = "jdbc:mysql://localhost/"+databaseName+"?characterEncoding=utf8&useConfigs=maxPerformance";
+    static Connection connection;
+    static String databaseName= "bd_projet_agl";
+    private static String url = "jdbc:mysql://localhost/"+databaseName+"?characterEncoding=utf8&useConfigs=maxPerformance";
 
 
-    private String username = "root";
+    private static String username = "root";
 
-    private String password = "";
+    private static String password = "";
 
-    public Connection getConnection() {
+    public static Connection getConnection() throws SQLException {
         try {
             Class.forName("com.mysql.jdbc.Driver");
         } catch (Exception e) {
             e.printStackTrace();
         }
         try {
-            connection = DriverManager.getConnection(url, username, password);
-            JOptionPane.showMessageDialog(null, "Connected");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+			try {
+				connection = DriverManager.getConnection(url, username, password);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//JOptionPane.showMessageDialog(null, "Connected");
         return connection;
     }
 

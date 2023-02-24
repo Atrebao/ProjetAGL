@@ -2,11 +2,12 @@ package Controllers;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-import com.mysql.jdbc.Connection;
+
 import com.projet.dao.DBConnection;
 
 import javafx.collections.FXCollections;

@@ -2,6 +2,7 @@ package Controllers;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 import javafx.animation.FadeTransition;
@@ -12,7 +13,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -40,6 +44,9 @@ public class homepageController implements Initializable{
 
     @FXML
     private Button idModifReserv;
+    
+    @FXML
+    private Button idAnnulerReserv;
 
     @FXML
     private Button dash;
@@ -48,10 +55,23 @@ public class homepageController implements Initializable{
     private AnchorPane holdPane;
 
     private AnchorPane Pane;
+    
+    @FXML
+    private Button Exit;
 
     @FXML
     void annulerReserv(ActionEvent event) {
-
+    	 try {
+    		 idEnregiReserv.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
+    		 idVerifReserv.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
+    		 idModifReserv.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
+             dash.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
+             Pane = FXMLLoader.load(getClass().getResource("../FXML_FILES/annulerReservation.fxml"));
+             setNode(Pane);
+             idAnnulerReserv.setStyle("-fx-background-color:  #2D3347; -fx-text-fill: #ffffff");
+         } catch (IOException e) {
+             e.printStackTrace();
+         }
     }
 
     @FXML
@@ -60,7 +80,7 @@ public class homepageController implements Initializable{
     		 idEnregiReserv.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
     		 idVerifReserv.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
     		 idModifReserv.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
-            // bill.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
+    		 idAnnulerReserv.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
              Pane = FXMLLoader.load(getClass().getResource("../FXML_FILES/dashboard.fxml"));
              setNode(Pane);
              dash.setStyle("-fx-background-color:  #2D3347; -fx-text-fill: #ffffff");
@@ -75,7 +95,7 @@ public class homepageController implements Initializable{
     	try {
    		 idVerifReserv.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
    		 idModifReserv.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
-           // bill.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
+   		idAnnulerReserv.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
             dash.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
             Pane = FXMLLoader.load(getClass().getResource("../FXML_FILES/enregistrerReservation.fxml"));
             setNode(Pane);
@@ -112,7 +132,7 @@ public class homepageController implements Initializable{
     	  try {
     		  idEnregiReserv.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
     		  idVerifReserv.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
-              //bill.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
+    		  idAnnulerReserv.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
               dash.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
               Pane = FXMLLoader.load(getClass().getResource("../FXML_FILES/modifierReservation.fxml"));
               setNode(Pane);
@@ -129,7 +149,7 @@ public class homepageController implements Initializable{
     	 try {
     		 idEnregiReserv.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
     		 idModifReserv.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
-             //bill.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
+    		 idAnnulerReserv.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
              Pane = FXMLLoader.load(getClass().getResource("../FXML_FILES/verifierReservation.fxml"));
              dash.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
              setNode(Pane);
@@ -154,11 +174,31 @@ public class homepageController implements Initializable{
 		        ft.play();
 
 		    }
+		 
+		
+			
 
 		@Override
 		public void initialize(URL location, ResourceBundle resources) {
 			// TODO Auto-generated method stub
 			
+			
+			
+			
+			Exit.setOnMouseClicked(event ->{
+				Alert alert = new Alert(AlertType.CONFIRMATION);
+				alert.setTitle("Exit");
+				alert.setHeaderText("");
+				alert.setContentText("Etes vous sur de vouloir quitter l'application?");
+				Optional< ButtonType> result = alert.showAndWait();
+				if(result.get() == ButtonType.OK) {
+					System.exit(0);
+				}
+				else if(result.get() == ButtonType.CANCEL){
+					alert.close();
+				}
+				
+			});
 		}
 
 }

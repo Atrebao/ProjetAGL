@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="675.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.enregistrerReservController">
+<AnchorPane prefHeight="644.0" prefWidth="773.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.enregistrerReservController">
    <children>
-      <AnchorPane layoutX="15.0" layoutY="8.0" prefHeight="347.0" prefWidth="690.0" style="-fx-background-color: #ffffff;">
+      <AnchorPane layoutX="15.0" layoutY="8.0" prefHeight="347.0" prefWidth="743.0" style="-fx-background-color: #ffffff;">
          <children>
             <ImageView fitHeight="31.0" fitWidth="54.0" layoutX="5.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -24,35 +24,43 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <DatePicker fx:id="dateDepart" layoutX="27.0" layoutY="242.0" prefHeight="31.0" prefWidth="266.0" promptText="Selectionner la date depart" />
-            <Label fx:id="price" layoutX="367.0" layoutY="263.0" text="Prix:">
+            <DatePicker fx:id="dateDepart" layoutX="27.0" layoutY="242.0" onAction="#datePickerButton" prefHeight="31.0" prefWidth="266.0" promptText="Selectionner la date depart" />
+            <Label layoutX="433.0" layoutY="272.0" text="Prix:">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <ComboBox fx:id="ComboNumDepart" layoutX="355.0" layoutY="172.0" prefHeight="31.0" prefWidth="284.0" promptText="Numero de depart" />
+            <ComboBox fx:id="ComboNumDepart" layoutX="421.0" layoutY="181.0" prefHeight="31.0" prefWidth="284.0" promptText="Numero de depart" />
             <ComboBox fx:id="comboVilleDepart" layoutX="28.0" layoutY="100.0" prefHeight="31.0" prefWidth="266.0" promptText="Selectionner la ville de depart" />
-            <TextField fx:id="NumTransacTextfield" layoutX="357.0" layoutY="100.0" prefHeight="31.0" prefWidth="284.0" promptText="Numero de transaction" />
-            <Button layoutX="606.0" layoutY="302.0" mnemonicParsing="false" onAction="#ValiderButton" text="Valider" />
-            <Label fx:id="price1" layoutX="367.0" layoutY="232.0" text="Code reservation:">
+            <TextField fx:id="NumTransacTextfield" layoutX="423.0" layoutY="109.0" prefHeight="31.0" prefWidth="284.0" promptText="Numero de transaction" />
+            <Button layoutX="665.0" layoutY="302.0" mnemonicParsing="false" onAction="#ValiderButton" text="Valider" />
+            <Label layoutX="433.0" layoutY="241.0" text="Code reservation:">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
             <ComboBox fx:id="ComboVilleArrive" layoutX="27.0" layoutY="172.0" prefHeight="31.0" prefWidth="266.0" promptText="Selectionner la ville d'arrivéé" />
-            <Label fx:id="codeReserv" layoutX="513.0" layoutY="234.0" text="Label" textFill="#ee1616">
+            <Label fx:id="codeReserv" layoutX="583.0" layoutY="239.0" prefHeight="30.0" prefWidth="73.0" text="????" textFill="#ee1616">
                <font>
-                  <Font name="Berlin Sans FB" size="15.0" />
+                  <Font name="Berlin Sans FB Bold" size="20.0" />
                </font>
             </Label>
-            <Label fx:id="prix" layoutX="439.0" layoutY="265.0" text="Label" textFill="#f81818" />
+            <Label fx:id="prix" layoutX="492.0" layoutY="270.0" prefHeight="30.0" prefWidth="67.0" text="????" textFill="#f81818">
+               <font>
+                  <Font name="Berlin Sans FB Bold" size="20.0" />
+               </font></Label>
+            <Label fx:id="cfa" layoutX="559.0" layoutY="270.0" prefHeight="30.0" prefWidth="73.0" text="????" textFill="#ee1d1d">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="15.0" layoutY="359.0" prefHeight="306.0" prefWidth="690.0" style="-fx-background-color: #ffffff;">
+      <AnchorPane layoutX="15.0" layoutY="359.0" prefHeight="276.0" prefWidth="743.0" style="-fx-background-color: #ffffff;">
          <children>
-            <TextField fx:id="nomTextfield" layoutX="32.0" layoutY="86.0" prefHeight="25.0" prefWidth="174.0" promptText="Nom" />
-            <TextField fx:id="prenomTextfield" layoutX="32.0" layoutY="155.0" prefHeight="25.0" prefWidth="174.0" promptText="Prenoms" />
-            <TextField fx:id="adresseTextfield" layoutX="258.0" layoutY="86.0" prefHeight="25.0" prefWidth="174.0" promptText="Adresse" />
+            <TextField fx:id="nomTextfield" layoutX="32.0" layoutY="86.0" prefHeight="25.0" prefWidth="213.0" promptText="Nom" />
+            <TextField fx:id="prenomTextfield" layoutX="32.0" layoutY="155.0" prefHeight="25.0" prefWidth="213.0" promptText="Prenoms" />
+            <TextField fx:id="adresseTextfield" layoutX="386.0" layoutY="86.0" prefHeight="31.0" prefWidth="213.0" promptText="Adresse" />
             <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="32.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../image/icons8-customer-30.png" />
@@ -63,8 +71,8 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Button layoutX="590.0" layoutY="261.0" mnemonicParsing="false" onAction="#EnregistrerButton" text="Enregistrer" />
-            <TextField fx:id="teltTextfield" layoutX="258.0" layoutY="155.0" prefHeight="25.0" prefWidth="174.0" promptText="Telephone" />
+            <Button layoutX="624.0" layoutY="208.0" mnemonicParsing="false" onAction="#EnregistrerButton" text="Enregistrer" />
+            <TextField fx:id="teltTextfield" layoutX="386.0" layoutY="155.0" prefHeight="31.0" prefWidth="213.0" promptText="Telephone" />
          </children>
       </AnchorPane>
    </children>

@@ -18,6 +18,7 @@ public class Main extends Application {
 			Image icon = new Image(getClass()
                     .getResourceAsStream("../image/logo.png"));
 			primaryStage.getIcons().add(icon);
+			//primaryStage.initStyle(StageStyle.UNDECORATED);
 			primaryStage.setScene(scene);
 			
 			primaryStage.setScene(scene);

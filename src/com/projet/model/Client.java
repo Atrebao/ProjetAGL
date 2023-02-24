@@ -1,5 +1,5 @@
 package com.projet.model;
-// Generated 6 févr. 2023, 09:29:42 by Hibernate Tools 4.3.6.Final
+// Generated 14 févr. 2023, 03:22:35 by Hibernate Tools 4.3.6.Final
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,6 +30,12 @@ public class Client implements java.io.Serializable {
 		this.prenom = prenom;
 		this.numTelephone = numTelephone;
 		this.domicile = domicile;
+		this.codeReservation = codeReservation;
+	}
+	// Mon constructeur perso
+	public Client(String nom, Integer codeReservation) {
+		super();
+		this.nom = nom;
 		this.codeReservation = codeReservation;
 	}
 

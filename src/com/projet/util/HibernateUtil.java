@@ -8,8 +8,12 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 
-import com.mysql.cj.xdevapi.Client;
+import com.projet.model.Administrateur;
+import com.projet.model.Employe;
+import com.projet.model.NumeroDepart;
 import com.projet.model.Reservation;
+import com.projet.model.Transaction;
+import com.projet.model.Villes;
 
 
 public class HibernateUtil {
@@ -37,6 +41,11 @@ public class HibernateUtil {
 
                 configuration.addAnnotatedClass(Reservation.class);
                 configuration.addAnnotatedClass(com.projet.model.Client.class);
+                configuration.addAnnotatedClass(Transaction.class);
+                configuration.addAnnotatedClass(Employe.class);
+                configuration.addAnnotatedClass(Administrateur.class);
+                configuration.addAnnotatedClass(Villes.class);
+                configuration.addAnnotatedClass(NumeroDepart.class);
 
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                     .applySettings(configuration.getProperties()).build();
