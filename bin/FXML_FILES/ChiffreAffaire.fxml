@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="673.0" prefWidth="778.0" style="-fx-background-color: #F8F8FF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutX="1.0" prefHeight="91.0" prefWidth="775.0" style="-fx-background-color: #04826c;" styleClass="tabAdmin">
+         <children>
+            <Label layoutX="154.0" layoutY="4.0" prefHeight="95.0" prefWidth="480.0" text="CHIFFRE D'AFFAIRE" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font size="52.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TableView layoutY="147.0" prefHeight="337.0" prefWidth="775.0" styleClass="tabAdmin">
+        <columns>
+          <TableColumn id="idReservation" prefWidth="72.0" styleClass="tabAdmin" text="Reservation" />
+          <TableColumn id="idJanvier" prefWidth="59.0" text="Janvier" />
+            <TableColumn id="idFevrier" prefWidth="50.0" text="Fevrier" />
+            <TableColumn id="idMars" prefWidth="51.0" text="Mars" />
+            <TableColumn id="idAvril" prefWidth="53.0" text="Avril" />
+            <TableColumn id="idMai" prefWidth="48.0" text="Mai" />
+            <TableColumn id="idJuin" prefWidth="51.0" text="Juin" />
+            <TableColumn id="idJuillet" prefWidth="56.0" text="Juillet" />
+            <TableColumn id="idAout" prefWidth="55.0" text="Aout" />
+            <TableColumn id="idSeptembre" prefWidth="68.0" text="Septembre" />
+            <TableColumn id="idOctobre" prefWidth="64.0" text="Octobre" />
+            <TableColumn id="idNovembre" prefWidth="64.0" text="Novembre" />
+            <TableColumn id="idDecembre" prefWidth="81.0" text="Decembre" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

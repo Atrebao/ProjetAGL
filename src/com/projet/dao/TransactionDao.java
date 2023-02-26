@@ -113,7 +113,7 @@ public class TransactionDao implements ITransaction{
 	            transaction = session.beginTransaction();
 
 	            // save student object
-	            session.update(transact);
+	            session.saveOrUpdate(transact);
 
 	            // commit the transaction
 	            transaction.commit();

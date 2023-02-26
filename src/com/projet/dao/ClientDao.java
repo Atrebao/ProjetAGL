@@ -84,7 +84,7 @@ public class ClientDao implements IClient{
 	            transaction = session.beginTransaction();
 
 	            // save student object
-	            session.update(client);
+	            session.saveOrUpdate(client);
 
 	            // commit the transaction
 	            transaction.commit();

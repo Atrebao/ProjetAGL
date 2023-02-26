@@ -38,6 +38,16 @@ public class Client implements java.io.Serializable {
 		this.nom = nom;
 		this.codeReservation = codeReservation;
 	}
+	
+	
+	//CONSTRUCTEUR PERSO
+	public Client(String nom, String prenom, String numTelephone, String domicile) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.numTelephone = numTelephone;
+		this.domicile = domicile;
+	}
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)

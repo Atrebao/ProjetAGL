@@ -27,7 +27,7 @@ public class Reservation implements java.io.Serializable {
 	
 	
 	
-	private Client client;
+	
 	
 	
 
@@ -49,7 +49,7 @@ public class Reservation implements java.io.Serializable {
 		this.numDepart = numDepart;
 		this.villeDepart = villeDepart;
 		this.villeArrivee = villeArrivee;
-		this.client = client;
+		
 		
 		/*.nom = nom;
 		this.code =code;*/
@@ -98,13 +98,7 @@ public class Reservation implements java.io.Serializable {
 	}
 
 	@Column(name = "ID_CLIENT", nullable = false)
-	public Client getClient() {
-		return this.client;
-	}
 	
-	public void setClient(Client client) {
-		this.client  = client;
-	}
 	
 	
 	public int getIdClient() {

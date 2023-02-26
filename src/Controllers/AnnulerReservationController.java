@@ -116,8 +116,7 @@ public class AnnulerReservationController implements Initializable{
 		    	 datePick = localD.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
 		    	 datePick = datePick.toString();
 		    	 
-		    	 System.out.println(villeArrive);
-		     
+		    	
 		    	 
 		    	
 		    	

@@ -2,6 +2,7 @@ package Controllers;
 
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -100,7 +101,7 @@ public class modifierReservController implements Initializable{
 	    private Integer prix;
 	    private Integer code_reservation;
 	    private String domicile;
-	    
+	  
 	  
 	    
 	    
@@ -109,8 +110,7 @@ public class modifierReservController implements Initializable{
 	    void modifierButton(ActionEvent event) throws SQLException {
 	    	
 	    	
-	    	recuperInformation();
-	    	
+	    
 	    	if(comboSelectCode.getSelectionModel().getSelectedItem() !=null){
 
 		    	 
@@ -121,10 +121,10 @@ public class modifierReservController implements Initializable{
 		    	
 	    		IReservation reservationDao = new ReservationDao();	
 	    		IClient clientDao = new ClientDao();
-	    		ITransaction transactionDao = new TransactionDao();
+	    		
 	    		Reservation reservation = new Reservation();
 	    		Client client = new Client();
-	    		Transaction transaction = new Transaction();
+	    		
 	    		
 		    	
 		    	
@@ -135,26 +135,66 @@ public class modifierReservController implements Initializable{
 		    	
 		    	
 	if( this.enventValider !=null) {
-		  if(nomTextf.isBlank() == false && prenomT.isBlank() ==false && /*adresseT.isBlank() ==false &&*/ teltT.isBlank() ==false) {
-			  if(isNumeric(this.telTextfield.getText()) !=false) {
-	  			if(isInteger(teltT) ==true && /*isInteger(adresseT)==false &&*/ isInteger(nomTextf)==false && isInteger(prenomT)==false) {
+		  if(nomTextf.isBlank() == false && prenomT.isBlank() ==false &&  teltT.isBlank() ==false) {
+			  
+	  			if(isInteger(teltT) ==true && isInteger(nomTextf)==false && isInteger(prenomT)==false) {
 	  				
-
-			    	vilDepart = villeDepart.getSelectionModel().getSelectedItem();
+	  				vilDepart = villeDepart.getSelectionModel().getSelectedItem();
 			    	 villeArrive = comboVilArrive.getSelectionModel().getSelectedItem().toString();
 			    	 numDepart= comboNumDepart.getSelectionModel().getSelectedItem().toString();
 			    	 localD = datePickerField.getValue();
 			    	 datePick = localD.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
 			    	 datePick = datePick.toString();
 	  				
+	  				DBConnection connectNow = new DBConnection();
+					  Connection connectBD = (Connection) connectNow.getConnection();  
+					  String update1 = "UPDATE client SET NOM = ?, PRENOM = ?, NUM_TELEPHONE = ? WHERE ID_CLIENT =?";
+					  String update2 = "UPDATE reservation SET VILLE_ARRIVEE = ?, VILLE_DEPART = ?, NUM_DEPART = ?, DATE_DEPART= ? WHERE NUM_RESERVATION =?";
+					 PreparedStatement prepare1 = connectBD.prepareStatement(update1);
+					 PreparedStatement prepare2 = connectBD.prepareStatement(update2);
+					 
+					 prepare1.setString(1, this.nomTextfield.getText().toUpperCase());
+					 prepare1.setString(2, this.prenomTextfield.getText().toUpperCase());
+					 prepare1.setString(3, this.telTextfield.getText());
+					 prepare1.setInt(4, this.id_client);
+					 
+					 prepare2.setString(1, villeArrive.toUpperCase());
+					 prepare2.setString(2, vilDepart.toUpperCase());
+					 prepare2.setString(3, numDepart);
+					 prepare2.setString(4, datePick);
+					 prepare2.setInt(5, this.num_reservation);
+					 
+					 prepare1.executeUpdate();
+					// prepare2.executeUpdate();
+
+						Alert alert = new Alert(AlertType.INFORMATION);
+						alert.setTitle("MODIFIER UN RESERVATION ");
+						alert.setHeaderText("Resultat");
+						alert.setContentText("La modification a ete effectuee avec succes");
+						alert.show();
+					 
+						nomTextfield.setText("");
+				    	prenomTextfield.setText("");
+				    	telTextfield.setText("");
+				    	villeDepart.setValue(null);
+				    	comboVilArrive.setValue(null);
+				    	datePickerField.setValue(null);
+				    	comboNumDepart.setValue(null);
+				    	
+				    	
+					 prepare1.close();
+					 prepare2.close();
+					 
+
+			    	
+	  				
 	  				  client.setCodeReservation(this.code_reservation);
 					  client.setDomicile(this.domicile.toUpperCase());
 					  client.setNom(this.nomTextfield.getText().toUpperCase());
 					  client.setPrenom(this.prenomTextfield.getText().toUpperCase());
 					  client.setNumTelephone(this.telTextfield.getText());
-					 // clientDao.modifierReservation(client);
-					  
-					  
+					 //clientDao.modifierReservation(client);
+					
 					  
 					  reservation.setNumDepart(numDepart);
 					  reservation.setPrix(this.prix);
@@ -166,34 +206,20 @@ public class modifierReservController implements Initializable{
 					  reservation.setNumtransaction(this.num_transaction);
 					  reservation.setNumReservation(this.num_reservation);
 					  reservationDao.modifierReservation(reservation);
+				 
 					  
 					  
-					  reservation.setNumDepart(null);
-					  reservation.setPrix(this.prix);
-					  reservation.setVilleArrivee(null);
-					  reservation.setVilleDepart(null);
-					  reservation.setIdEmploye(1);
-					  reservation.setIdClient(this.id_client);
-					  reservation.setDateDepart(null);
-					  reservation.setNumtransaction(this.num_transaction);
-					  reservation.setNumReservation(this.num_reservation);
-					 // reservationDao.modifierReservation(reservation);
+					 
 					  
 					  
-					  
-					  
-					  
-					  
-					  transaction.setDateTransaction(datePick);
-					  transaction.setMontant(this.prix);
-					// transactionDao.modifeirTransaction(transaction);
+					
 					
 					 
 					 					  
 
 	  			}
 	  		}
-		  }
+		  
 		    		
 		    		
 		    		
@@ -296,6 +322,10 @@ public class modifierReservController implements Initializable{
 		    		this.code_reservation = resultset.getInt("CODE_RESERVATION");
 		    		
 		    		this.domicile  =resultset.getString("DOMICILE");
+		    		
+		    		this.num_reservation= resultset.getInt("NUM_RESERVATION");
+		    		
+		    		
 		    		
 		    		
 		    		

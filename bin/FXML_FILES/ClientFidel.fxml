@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="770.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ClientFidelController">
+	<children>
+		<Label layoutX="47.0" layoutY="14.0" text="Client Fidel">
+			<font>
+				<Font name="System Bold" size="61.0" />
+			</font>
+			<textFill>
+				<RadialGradient focusDistance="1.0" radius="0.8793103448275863">
+					<stops>
+						<Stop>
+							<color>
+								<Color blue="0.3684210479259491" green="0.18705327808856964" red="0.12110136449337006" />
+							</color>
+						</Stop>
+						<Stop offset="0.8934707903780068">
+							<color>
+								<Color blue="0.46052631735801697" green="0.15777289867401123" red="0.21832358837127686" />
+							</color>
+						</Stop>
+						<Stop offset="1.0">
+							<color>
+								<Color blue="0.42352941632270813" green="0.5098039507865906" opacity="0.8299999833106995" red="0.01568627543747425" />
+							</color>
+						</Stop>
+					</stops>
+				</RadialGradient>
+			</textFill>
+		</Label>
+		<TextField fx:id="rechercTextfield" layoutX="102.0" layoutY="114.0" onKeyReleased="#handleSearchKey" prefHeight="25.0" prefWidth="212.0" promptText="Rechercher par nom" />
+		<ImageView fx:id="idRecherche" fitHeight="20.0" fitWidth="20.0" layoutX="58.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
+			<image>
+				<Image url="@../image/icons8-search-32.png" />
+			</image>
+		</ImageView>
+		<TableView fx:id="idTableview" layoutX="68.0" layoutY="183.0" prefHeight="377.0" prefWidth="655.0" styleClass="tabAdmin">
+			<columns>
+				<TableColumn fx:id="IdNom_Client" minWidth="4.0" prefWidth="117.0" styleClass="tabAdmin" text="Nom_Client" />
+				<TableColumn fx:id="idPrenom_Client" prefWidth="178.0" text="Prenom_Client" />
+				<TableColumn fx:id="idNum_Telephone" minWidth="0.0" prefWidth="187.0" text="Num_Telephone" />
+				<TableColumn fx:id="idDomicile" prefWidth="172.0" text="Domicile" />
+			</columns>
+		</TableView>
+	</children>
+</AnchorPane>

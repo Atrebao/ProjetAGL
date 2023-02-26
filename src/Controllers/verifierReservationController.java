@@ -104,13 +104,6 @@ public class verifierReservationController<T> implements Initializable{
 				while(resultset.next()) {
 					
 					try {
-						String name = resultset.getString("NOM");
-						String prenoms = resultset.getString("PRENOM");
-						int telephone = resultset.getInt("NUM_TELEPHONE");
-						String vilA = resultset.getString("VILLE_ARRIVEE");
-						String vilDep = resultset.getString("VILLE_DEPART");
-						String numDep = resultset.getString("NUM_DEPART");
-						String date = resultset.getString("DATE_DEPART");
 						
 						
 								
@@ -205,68 +198,9 @@ public class verifierReservationController<T> implements Initializable{
 	    }
 
 
-	    @FXML
-	    void handleSearchKey(KeyEvent event) throws SQLException {
-	    	if (event.getEventType() == KeyEvent.KEY_RELEASED) {
-	            String s = rechercTextfield.getText();
-	           // searchByNumberReservation(reservations, s);
-	           // searchByReservationNumberClients(clients , s);
-	          //  searchByCodeReservation();
-	          
-	            
-	        }
-
-		     tableInformation.setItems(null);
-		     tableClient.setItems(null);
-		     tableInformation.setItems(reservations);
-		     tableClient.setItems(clients);
-	    }
+	 
 	    
-	    private void searchByNumberReservation(ObservableList<Reservation> res, String s) {
-	        res.clear();
-	        for (int i = 0; i < reservationList.size(); i++) {
-	            if (Integer.toString(reservationList.get(i).getNumtransaction()).indexOf(s) == 0) {
-	                res.add(reservationList.get(i));
-	            }
-	        }
-	    }
-	    
-	    public void searchByCodeReservation(ObservableList<T> list, String s) throws SQLException {
-	    	DBConnection connectNow = new DBConnection();
-	    	Connection connectBD = (Connection) connectNow.getConnection();
-	    	
-	    	String query1= "SELECT * FROM  client as c join reservation as r on c.ID_CLIENT = r.NUM_RESERVATION join transaction as t"
-	    			+ " on t.NUMTRANSACTION = r.NUM_RESERVATION WHERE CODE_RESERVATION  = "+s;
-	    	java.sql.Statement stmt= connectBD.createStatement();
-	    	ResultSet resultset = stmt.executeQuery(query1);
-	    	//ResultSet result = stmt.executeQuery(query3);
-	    	list.clear();
-	    	while(resultset.next()) {
-	    		
-	    		String nom = resultset.getString("NOM");
-	    		String prenoms = resultset.getString("PRENOM");
-	    		Integer telephone = resultset.getInt("NUM_TELEPHONE");
-	    		String vilArriv = resultset.getString("VILLE_ARRIVEE");
-	    		String vilDepart = resultset.getString("VILLE_DEPART");
-	    		String numDepart = resultset.getString("NUM_DEPART");
-	    		String date = resultset.getString("DATE_DEPART");
-	    		
-	    		
-	    		
-	    		
-	    	}
-	    	
-	    }
-	    
-	    
-	    private void searchByReservationNumberClients(ObservableList<Client> res, String s) {
-	        res.clear();
-	        for (int i = 0; i < reservationList.size(); i++) {
-	            if (Integer.toString(clientList.get(i).getCodeReservation()).indexOf(s) == 0) {
-	                res.add(clientList.get(i));
-	            }
-	        }
-	    }
+	 
 	    
 	    
 	    
