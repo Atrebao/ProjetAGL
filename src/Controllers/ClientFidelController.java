@@ -113,12 +113,12 @@ import javafx.scene.input.MouseEvent;
 				}
 		    	
 		    
-		    	//Id_Client.setCellValueFactory(new PropertyValueFactory<>("Id_Client"));
+		    	
 		    	IdNom_Client.setCellValueFactory(new PropertyValueFactory<>("nom"));
 		    	idPrenom_Client.setCellValueFactory(new PropertyValueFactory<>("prenom"));
 		    	idNum_Telephone.setCellValueFactory(new PropertyValueFactory<>("numTelephone"));
 		    	idDomicile.setCellValueFactory(new PropertyValueFactory<>("domicile"));
-		    	//idCode_Reservation.setCellValueFactory(new PropertyValueFactory<>("Code_Reservation"));
+		    	
 			     
 		    	 idTableview.setItems(null);
 			     idTableview.setItems(this.clientList);

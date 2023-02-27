@@ -24,12 +24,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.image.Image;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class loginController implements Initializable{
 	
@@ -73,60 +75,7 @@ public class loginController implements Initializable{
 	    	
 	    	
 	    	//String s= this.combobox.getValue().toString();
-	    	/*
-	    	switch (s) {
-			case "Employe": {
-				try {
-		    		Parent root = FXMLLoader.load(getClass().getResource("../FXML_FILES/homepageEmploye.fxml"));
-		    		parent.getScene().getWindow().hide();
-					Stage stage = new Stage();
-					Scene sc = new Scene(root);
-					stage.setScene(sc);
-					stage.show();
-					
-				} catch(Exception e) {
-					e.printStackTrace();
-				}
-			break;
-			
-				
-			}
-			case "Administrateur":{
-				parent.getScene().getWindow().hide();
-				Parent root;
-				try {
-					root = FXMLLoader.load(getClass().getResource("../FXML_FILES/homepageAdmin.fxml"));
-					Stage stage = new Stage();
-					Scene sc = new Scene(root);
-					stage.setScene(sc);
-					stage.show();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-	    		break;
-				
-			}
-			
-			case "null":{
-				parent.getScene().getWindow().hide();
-				Parent root;
-				try {
-					root = FXMLLoader.load(getClass().getResource("../FXML_FILES/login.fxml"));
-					Stage stage = new Stage();
-					Scene sc = new Scene(root);
-					stage.setScene(sc);
-					stage.show();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-	    		break;
-				
-			}
-				
-			}
-	    	*/
+	    	
 	    	  	
 	    	
 	    }
@@ -185,7 +134,11 @@ public class loginController implements Initializable{
 					try {
 						root = FXMLLoader.load(getClass().getResource("../FXML_FILES/homepage"+s+".fxml"));
 						Stage stage = new Stage();
+						stage.initStyle(StageStyle.UNDECORATED);
 						Scene sc = new Scene(root);
+						Image icon = new Image(getClass()
+			                    .getResourceAsStream("../image/logo.png"));
+						stage.getIcons().add(icon);
 						stage.setScene(sc);
 						stage.show();
 					} catch (IOException e) {

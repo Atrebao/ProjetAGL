@@ -2,6 +2,7 @@ package Controllers;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 import javafx.animation.FadeTransition;
@@ -12,8 +13,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -40,9 +44,14 @@ public class homepageAdmiController implements Initializable{
 
     @FXML
     private Button idClientFidel;
+    
 
     @FXML
     private Button idModifierDest;
+    
+    @FXML
+    private Button Exit;
+    
 
     @FXML
     private Button idAjoutEmploye;
@@ -105,7 +114,7 @@ public class homepageAdmiController implements Initializable{
  }
   
 
-
+  
 
 
 
@@ -158,6 +167,20 @@ public class homepageAdmiController implements Initializable{
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-		
+		Exit.setOnMouseClicked(event ->{
+			Alert alert = new Alert(AlertType.CONFIRMATION);
+			alert.setTitle("Exit");
+			alert.setHeaderText("");
+			alert.setContentText("Etes vous sur de vouloir quitter l'application?");
+			Optional< ButtonType> result = alert.showAndWait();
+			if(result.get() == ButtonType.OK) {
+				System.exit(0);
+			}
+			else if(result.get() == ButtonType.CANCEL){
+				alert.close();
+			}
+			
+		});
 	}
+	
 }

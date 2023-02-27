@@ -12,85 +12,90 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="768.0" style="-fx-background-color: #04826c;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AjouterEmployeController">
+
+<AnchorPane prefHeight="613.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AjouterEmployeController">
    <children>
-      <Label layoutX="166.0" layoutY="27.0" prefHeight="53.0" prefWidth="437.0" text="Ajouter Nouvel Employe">
-         <font>
-            <Font name="System Bold" size="36.0" />
-         </font>
-         <textFill>
-            <RadialGradient centerX="1.0" centerY="1.0" radius="0.5">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color blue="1.0" green="1.0" red="1.0" />
-                     </color>
-                  </Stop>
-               </stops>
-            </RadialGradient>
-         </textFill>
-      </Label>
-      <ImageView fitHeight="25.0" fitWidth="32.0" layoutX="24.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/icons8-user-24.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="33.0" layoutX="437.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/icons8-user-24.png" />
-         </image>
-      </ImageView>
-      <TextField fx:id="emailtextfield" layoutX="75.0" layoutY="346.0" prefHeight="34.0" prefWidth="198.0" promptText="Email" style="-fx-background-color: #04826c; -fx-text-fill: #fff;" />
-      <TextField fx:id="prenomtextfield" layoutX="497.0" layoutY="148.0" prefHeight="34.0" prefWidth="183.0" promptText="Prenom" style="-fx-background-color: #04826c; -fx-text-fill: #fff;" />
-      <ImageView fitHeight="25.0" fitWidth="34.0" layoutX="437.0" layoutY="257.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/icons8-ringing-phone-24.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="25.0" layoutY="351.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/icons8-mail-24.png" />
-         </image>
-      </ImageView>
-      <TextField fx:id="sextextfield" layoutX="72.0" layoutY="252.0" prefHeight="34.0" prefWidth="204.0" promptText="Sexe" style="-fx-background-color: #04826c; -fx-text-fill: #fff;" />
-      <TextField fx:id="telephonetextfield" layoutX="497.0" layoutY="252.0" prefHeight="34.0" prefWidth="183.0" promptText="Telephone" style="-fx-background-color: #04826c; -fx-text-fill: #fff;" />
-      <TextField fx:id="nomtextfield" layoutX="75.0" layoutY="148.0" prefHeight="34.0" prefWidth="198.0" promptText="Nom" style="-fx-background-color: #04826c; -fx-text-fill: #fff;" />
-      <TextField fx:id="nomutilisateurtextfield" layoutX="75.0" layoutY="437.0" prefHeight="34.0" prefWidth="198.0" promptText="Nom_Utilisateur" style="-fx-background-color: #04826c; -fx-text-fill: #fff;" />
-      <TextField fx:id="domiciletextfield" layoutX="497.0" layoutY="346.0" prefHeight="34.0" prefWidth="183.0" promptText="Domicile" style="-fx-background-color: #04826c; -fx-text-fill: #fff;" />
-      <TextField fx:id="mpdtextfield" layoutX="494.0" layoutY="437.0" prefHeight="34.0" prefWidth="189.0" promptText="MDP" style="-fx-background-color: #04826c; -fx-text-fill: #fff;" />
-      <Button fx:id="idAjouter" layoutX="331.0" layoutY="555.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="34.0" prefWidth="107.0" text="Ajouter" />
-      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="25.0" layoutY="257.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/venus-mars%20(1).png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="25.0" layoutY="442.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/user.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="34.0" layoutX="437.0" layoutY="351.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/home.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="437.0" layoutY="442.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/lock%20(1).png" />
-         </image>
-      </ImageView>
-      <Line endX="122.0" layoutX="151.0" layoutY="182.0" startX="-76.0" stroke="WHITE" />
-      <Line endX="110.0" layoutX="166.0" layoutY="286.0" startX="-94.0" stroke="WHITE" />
-      <Line endX="154.0" layoutX="115.0" layoutY="380.0" startX="-37.0" stroke="WHITE" />
-      <Line endX="122.0" layoutX="151.0" layoutY="471.0" startX="-76.0" stroke="WHITE" />
-      <Line endX="91.0" endY="-1.0" layoutX="589.0" layoutY="183.0" startX="-92.0" startY="-1.0" stroke="WHITE" />
-      <Line endX="67.0" endY="-1.0" layoutX="613.0" layoutY="287.0" startX="-116.0" startY="-1.0" stroke="WHITE" />
-      <Line endX="70.0" layoutX="610.0" layoutY="380.0" startX="-113.0" stroke="WHITE" />
-      <Line endX="80.0" endY="-1.0" layoutX="603.0" layoutY="472.0" startX="-109.0" startY="-1.0" stroke="WHITE" />
+      <AnchorPane layoutX="9.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="596.0" prefWidth="770.0" style="-fx-background-color: #04826c;">
+         <children>
+            <Label layoutX="171.0" layoutY="55.0" prefHeight="53.0" prefWidth="437.0" text="Ajouter Nouvel Employe">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="1.0" centerY="1.0" radius="0.5">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color blue="1.0" green="1.0" red="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </Label>
+            <ImageView fitHeight="34.0" fitWidth="31.0" layoutX="24.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/icons8-user-24.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="31.0" layoutX="437.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/icons8-user-24.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="emailtextfield" layoutX="75.0" layoutY="346.0" prefHeight="34.0" prefWidth="198.0" promptText="Email" style="-fx-background-color: #04826c; -fx-text-fill: #fff;" />
+            <TextField fx:id="prenomtextfield" layoutX="497.0" layoutY="148.0" prefHeight="34.0" prefWidth="183.0" promptText="Prenom" style="-fx-background-color: #04826c; -fx-text-fill: #fff;" />
+            <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="437.0" layoutY="257.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/icons8-ringing-phone-24.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="25.0" layoutY="351.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/icons8-mail-24.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="sextextfield" layoutX="72.0" layoutY="252.0" prefHeight="34.0" prefWidth="204.0" promptText="Sexe" style="-fx-background-color: #04826c; -fx-text-fill: #fff;" />
+            <TextField fx:id="telephonetextfield" layoutX="497.0" layoutY="252.0" prefHeight="34.0" prefWidth="183.0" promptText="Telephone" style="-fx-background-color: #04826c; -fx-text-fill: #fff;" />
+            <TextField fx:id="nomtextfield" layoutX="75.0" layoutY="148.0" prefHeight="34.0" prefWidth="198.0" promptText="Nom" style="-fx-background-color: #04826c; -fx-text-fill: #fff;" />
+            <TextField fx:id="nomutilisateurtextfield" layoutX="75.0" layoutY="437.0" prefHeight="34.0" prefWidth="198.0" promptText="Nom_Utilisateur" style="-fx-background-color: #04826c; -fx-text-fill: #fff;" />
+            <TextField fx:id="domiciletextfield" layoutX="497.0" layoutY="346.0" prefHeight="34.0" prefWidth="183.0" promptText="Domicile" style="-fx-background-color: #04826c; -fx-text-fill: #fff;" />
+            <TextField fx:id="mpdtextfield" layoutX="494.0" layoutY="437.0" prefHeight="34.0" prefWidth="189.0" promptText="MDP" style="-fx-background-color: #04826c; -fx-text-fill: #fff;" />
+            <Button fx:id="idAjouter" layoutX="331.0" layoutY="514.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="34.0" prefWidth="107.0" text="Ajouter" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="25.0" layoutY="257.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/venus-mars%20(1).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="25.0" layoutY="442.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/user.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="34.0" layoutX="437.0" layoutY="351.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/home.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="437.0" layoutY="442.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/lock%20(1).png" />
+               </image>
+            </ImageView>
+            <Line endX="122.0" layoutX="151.0" layoutY="182.0" startX="-76.0" stroke="WHITE" />
+            <Line endX="110.0" layoutX="166.0" layoutY="286.0" startX="-94.0" stroke="WHITE" />
+            <Line endX="154.0" layoutX="115.0" layoutY="380.0" startX="-37.0" stroke="WHITE" />
+            <Line endX="122.0" layoutX="151.0" layoutY="471.0" startX="-76.0" stroke="WHITE" />
+            <Line endX="91.0" endY="-1.0" layoutX="589.0" layoutY="183.0" startX="-92.0" startY="-1.0" stroke="WHITE" />
+            <Line endX="67.0" endY="-1.0" layoutX="613.0" layoutY="287.0" startX="-116.0" startY="-1.0" stroke="WHITE" />
+            <Line endX="70.0" layoutX="610.0" layoutY="380.0" startX="-113.0" stroke="WHITE" />
+            <Line endX="80.0" endY="-1.0" layoutX="603.0" layoutY="472.0" startX="-109.0" startY="-1.0" stroke="WHITE" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

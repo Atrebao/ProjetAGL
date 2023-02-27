@@ -17,7 +17,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.loginController">
    <center>
       <AnchorPane fx:id="parent" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="564.0" prefWidth="887.0" styleClass="parent" stylesheets="@../CSS/application.css">
@@ -89,7 +88,7 @@
                         <Blend />
                      </effect>
                   </Button>
-                  <ComboBox fx:id="combobox" layoutX="584.0" layoutY="141.0" prefHeight="40.0" prefWidth="228.0" promptText="    Employé     /    Admin" style="-fx-border-radius: 50;" />
+                  <ComboBox fx:id="combobox" layoutX="563.0" layoutY="110.0" prefHeight="53.0" prefWidth="228.0" promptText="    Employé     /    Admin" style="-fx-border-radius: 50;" />
                   <Label layoutX="455.0" layoutY="236.0" prefHeight="21.0" prefWidth="108.0" text="UserName : " textFill="#7c6c6c">
                      <font>
                         <Font name="Berlin Sans FB" size="18.0" />
